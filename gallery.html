@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Soeltapsa Primary School</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo-container">
+    <img src="images/logo.jpg" alt="School Logo" class="logo">
+    <h1>Soeltapsa Primary School</h1>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <div class="dropdown">
+      <button class="dropbtn">Academics ▾</button>
+      <div class="dropdown-content">
+        <a href="academics.html">Overview</a>
+        <a href="question-bank.html">Question Bank</a>
+      </div>
+    </div>
+    <a href="admissions.html">Admissions</a>
+    <a href="news-events.html">News & Events</a>
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<main class="gallery">
+  <h2>📸 School Gallery</h2>
+  <p class="intro">A glimpse of our vibrant school life, events, and activities.</p>
+
+  <div class="gallery-grid">
+    <img src="images/G12.jpg" alt="Event 1" onclick="openLightbox(0)">
+    <img src="images/G11 (2).jpg" alt="Event 2" onclick="openLightbox(1)">
+    <img src="images/G10.jpg" alt="Event 3" onclick="openLightbox(2)">
+    <img src="images/G9.jpg" alt="Event 4" onclick="openLightbox(3)">
+    <img src="images/G8.jpg" alt="Event 5" onclick="openLightbox(4)">
+    <img src="images/G7.jpg" alt="Event 6" onclick="openLightbox(5)">
+    <img src="images/G6.jpg" alt="Event 7" onclick="openLightbox(6)">
+    <img src="images/G2.jpg" alt="Event 8" onclick="openLightbox(7)">
+    <img src="images/G3.jpg" alt="Event 9" onclick="openLightbox(8)">
+    <img src="images/G4.jpg" alt="Event 10" onclick="openLightbox(9)">
+    <img src="images/G4.jpg" alt="Event 11" onclick="openLightbox(10)">
+    <img src="images/G5.jpg" alt="Event 12" onclick="openLightbox(11)">
+    <img src="images/galary1.jpg" alt="Event 13" onclick="openLightbox(12)">
+     <img src="images/G-17.jpg" alt="Event 13" onclick="openLightbox(13)">
+      <img src="images/G-18.jpg" alt="Event 13" onclick="openLightbox(14)">
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+  <img id="lightbox-img" class="lightbox-content">
+  <span class="next" onclick="changeSlide(1)">&#10095;</span>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Soeltapsa Primary School. All Rights Reserved.</p>
+</footer>
+
+<script>
+let currentIndex = 0;
+const images = document.querySelectorAll('.gallery-grid img');
+
+function toggleMenu() {
+  const nav = document.querySelector('.navbar');
+  if(nav.style.display === "flex") {
+    nav.style.display = "none";
+  } else {
+    nav.style.display = "flex";
+    nav.style.flexDirection = "column";
+  }
+}
+
+function openLightbox(index) {
+  currentIndex = index;
+  document.getElementById("lightbox").style.display = "block";
+  document.getElementById("lightbox-img").src = images[currentIndex].src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function changeSlide(step) {
+  currentIndex = (currentIndex + step + images.length) % images.length;
+  document.getElementById("lightbox-img").src = images[currentIndex].src;
+}
+
+// Optional: keyboard support (← → Esc)
+document.addEventListener("keydown", (e) => {
+  if(document.getElementById("lightbox").style.display === "block") {
+    if(e.key === "ArrowRight") changeSlide(1);
+    if(e.key === "ArrowLeft") changeSlide(-1);
+    if(e.key === "Escape") closeLightbox();
+  }
+});
+</script>
+
+</body>
+</html>

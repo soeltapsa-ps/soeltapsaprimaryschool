@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soeltapsa Primary School</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        /* Slideshow styling */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .slideshow-container img {
+            width: 100%;
+            display: none;
+            height: 400px;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out; /* smooth fade */
+        }
+        .slideshow-container img.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .slideshow-container img {
+                height: 220px;
+            }
+            
+        }
+
+        /* Social media links */
+        .social-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 28px;
+            color: #004080;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo-container">
+        <img src="images/logo.jpg" alt="School Logo" class="logo">
+        <h1>Soeltapsa Primary School</h1>
+        <!-- Hamburger button for mobile -->
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+
+        <!-- Dropdown for Academics -->
+        <div class="dropdown">
+            <button class="dropbtn">Academics ▾</button>
+            <div class="dropdown-content">
+                <a href="academics.html">Overview</a>
+                <a href="question-bank.html">Question Bank</a>
+            </div>
+        </div>
+
+        <a href="admissions.html">Admissions</a>
+        <a href="news-events.html">News & Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero Slideshow -->
+<section class="hero">
+    <div class="slideshow-container">
+        <img src="images/banner.jpg" alt="School Banner 1" class="active">
+        <img src="images/banner2.jpg" alt="School Banner 2">
+        <img src="images/banner3.jpg" alt="School Banner 3">
+    </div>
+    <div class="hero-text">
+        <h2>Welcome to Soeltapsa Primary School</h2>
+        <p>Empowering all children with inclusive education for vibrant communities dedicated to tsa-wa-sum.</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main>
+    <section class="about-school">
+        <h2>About Our School</h2>
+        <p>Our school is committed to academic excellence, character building, and creating a nurturing environment for every child. We aim to empower our students with skills, values, and knowledge to succeed in life and contribute to the community.</p>
+    </section>
+
+    <section class="quick-links">
+        <h2>Explore More</h2>
+        <div class="links-grid">
+            <a href="news-events.html">News & Events</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="academics.html">Academics Overview</a>
+            <a href="question-bank.html">Question Bank</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/share/1725D7Crgo/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 Soeltapsa Primary School. All Rights Reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+/* Hamburger Menu Toggle */
+function toggleMenu() {
+    const nav = document.querySelector('.navbar');
+    nav.classList.toggle('show');
+}
+
+/* Slideshow */
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slideshow-container img');
+
+function showSlides() {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+    });
+
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add('active');
+
+    setTimeout(showSlides, 4000); // change every 4 seconds
+}
+
+/* Start slideshow */
+showSlides();
+</script>
+
+</body>
+</html>

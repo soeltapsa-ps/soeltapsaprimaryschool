@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Soeltapsa Primary School</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Header (same as other pages) -->
+<header>
+    <div class="logo-container">
+        <img src="images/logo.jpg" alt="School Logo" class="logo">
+        <h1>Soeltapsa Primary School</h1>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <div class="dropdown">
+            <button class="dropbtn">Academics ▾</button>
+            <div class="dropdown-content">
+                <a href="academics.html">Overview</a>
+                <a href="question-bank.html">Question Bank</a>
+            </div>
+        </div>
+        <a href="admissions.html" class="active">Admissions</a>
+        <a href="news-events.html">News & Events</a>
+        <a href="Academics.html">Academics Overview</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Admissions</h2>
+        <p>We welcome applications from students who are eager to learn and grow. Our admissions process ensures that we provide the best possible environment for all learners.</p>
+        
+        <h3>How to Apply</h3>
+        <ol>
+            <li>Download the admission form.</li>
+            <li>Fill out the form and prepare required documents.</li>
+            <li>Submit the form in person or via email.</li>
+        </ol>
+
+        <!-- Download Admission Forms -->
+        <h3>Download Admission Forms</h3>
+        <ul>
+            <li>
+                <a href="files/admissions/SPS Admission Form.pdf" download>
+                    Download SPS Admission Form (PDF)
+                </a>
+            </li>
+            <li>
+                <a href="files/admissions/ECCD Admission Form.pdf" download>
+                    Download ECCD Admission Form (PDF)
+                </a>
+            </li>
+        </ul>
+
+        <!-- Required Documents -->
+        <h3>Required Documents</h3>
+        <ul>
+            <li>Copy of birth certificate</li>
+            <li>Transfer certificate (if applicable)</li>
+            <li>Recent passport-size photographs (2)</li>
+            <li>Previous academic records</li>
+            <li>Medical certificate (if available)</li>
+        </ul>
+
+        <!-- Note for Parents -->
+        <p style="background:#f0f8ff; border-left:4px solid #004080; padding:10px; margin-top:20px;">
+            <strong>Note:</strong> Please make sure all required documents are ready before filling the online application form.  
+            After submitting online, kindly visit the school office with the original documents for verification.
+        </p>
+
+        <!-- Online Application Link -->
+        <p style="text-align:center; margin-top:20px;">
+            <a href="online-application.html" 
+               style="background:#004080; color:#fff; padding:10px 20px; text-decoration:none; border-radius:5px; transition:0.3s;"
+               onmouseover="this.style.background='#ff6600'" 
+               onmouseout="this.style.background='#004080'">
+               Apply Online Now
+            </a>
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Soeltapsa Primary School. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const nav = document.querySelector('.navbar');
+    nav.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
